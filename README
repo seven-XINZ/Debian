@@ -8,12 +8,12 @@
 
 复制你在 README 中提供的的一键安装命令。 例如 (请使用你完整实际的 Raw URL):
 
-SUDO=$(command -v sudo); ${SUDO:-} bash -c "bash <(wget -qO- https://raw.githubusercontent.com/seven-XINZ/Debiannas/main/xinz_nas_manager_zh.sh)"
+SUDO=$(command -v sudo); ${SUDO:-} bash -c "bash <(wget -qO- https://raw.githubusercontent.com/seven-XINZ/Debian/main/xinz_nas_manager_zh.sh)"
 请谨慎使用代码。
 重击
 或者使用 的版本:卷曲
 
-SUDO=$(command -v sudo); ${SUDO:-} bash -c "bash <(curl -sSL https://raw.githubusercontent.com/seven-XINZ/Debiannas/main/xinz_nas_manager_zh.sh)"
+SUDO=$(command -v sudo); ${SUDO:-} bash -c "bash <(curl -sSL https://raw.githubusercontent.com/seven-XINZ/Debian/main/xinz_nas_manager_zh.sh)"
 请谨慎使用代码。
 重击
 在终端中粘贴并按 Enter 执行。
