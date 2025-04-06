@@ -1,0 +1,55 @@
+打开 Linux 终端: 用户需要登录到他们的 Linux 服务器（Debian, Ubuntu, Fnos 等）的终端界面。
+
+确保网络连接: 确认服务器可以访问互联网（特别是 GitHub）。
+
+确保安装了 或 :wget卷曲 大多数系统会预装其中一个。 如果都没有，需要先安装 (例如 )。 sudo apt update & sudo apt install wget curl -y
+
+执行一键安装命令:
+
+复制你在 README 中提供的的一键安装命令。 例如 (请使用你完整实际的 Raw URL):
+
+SUDO=$(command -v sudo); ${SUDO:-} bash -c "bash <(wget -qO- https://raw.githubusercontent.com/seven-XINZ/Debiannas/main/xinz_nas_manager_zh.sh)"
+请谨慎使用代码。
+重击
+或者使用 的版本:卷曲
+
+SUDO=$(command -v sudo); ${SUDO:-} bash -c "bash <(curl -sSL https://raw.githubusercontent.com/seven-XINZ/Debiannas/main/xinz_nas_manager_zh.sh)"
+请谨慎使用代码。
+重击
+在终端中粘贴并按 Enter 执行。
+
+按脚本提示操作:
+
+脚本启动后，会显示欢迎信息和主菜单。
+
+用户根据自己的需求，输入数字选择菜单项。
+
+首次使用: 强烈建议用户先选择 “1、系统初始配置”，并根据提示选择对应的操作系统，执行 “配置软件源” 和 “安装必备软件”。 完成后最好重启系统。
+
+按需选择: 用户可以根据需要选择安装 Cockpit、配置邮件通知、设置 Docker、安装应用等。
+
+多选: 脚本支持输入多个数字（用空格隔开）来按顺序执行多个操作。
+
+Docker 应用安装:
+
+进入 Docker 服务 -> 安装容器应用。
+
+选择 Docker Compose 或 Docker Run。
+
+选择具体的应用。
+
+对于 Docker Run 应用，脚本会显示默认的 命令，并询问是使用默认命令还是自定义。docker 运行
+
+如果选择，可能还会询问。 默认重启策略
+
+如果选择，脚本会引导用户逐项设置容器名、网络、端口、卷、PUID/PGID、环境变量和重启策略。自定义
+
+仔细阅读提示: 在自定义过程中，用户需要根据脚本的提示输入信息，注意格式要求。 特别是路径映射，需要输入宿主机的。 绝对路径
+
+确认执行: 在显示最终生成的 命令后，用户需要输入 docker 运行和 确认执行。
+
+备份与恢复: 选择此项时，如果之前没有设置过备份路径，脚本会提示用户输入一个用于存放备份文件。绝对路径
+
+阅读输出: 注意脚本执行过程中的信息、警告或错误提示。
+
+输入 返回/退出:0 在各级菜单中，输入 通常是返回上一级或退出脚本。0
