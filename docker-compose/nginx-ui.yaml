@@ -1,0 +1,17 @@
+services:
+  nginx-ui:
+    container_name: nginx-ui
+    image: uozi/nginx-ui:latest
+    restart: always
+    stdin_open: true
+    tty: true
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - "/opt/docker/nginx-ui/nginx:/etc/nginx" # 用户可自定义
+      - "/opt/docker/nginx-ui/ui:/etc/nginx-ui" # 用户可自定义
+      - "/opt/docker/nginx-ui/logs:/var/log/nginx" # 用户可自定义
+      - "/opt/docker/nginx-ui/www:/var/www" # 用户可自定义
+    ports:
+      - "12800:80" # 用户可自定义
+      - "12443:443" # 用户可自定义

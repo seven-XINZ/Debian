@@ -1,0 +1,27 @@
+services:
+  scrutiny:
+    container_name: scrutiny
+    image: ghcr.io/analogj/scrutiny:master-omnibus
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    environment:
+      - COLLECTOR_CRON_SCHEDULE=0 * * * * # 用户可自定义
+      - TZ=Asia/Shanghai
+    cap_add:
+      - SYS_RAWIO
+      # - SYS_ADMIN # SYS_ADMIN 权限过高，通常不需要，除非有特定问题
+    ports:
+      - "9626:8080" # 用户可自定义
+      - "8086:8086" # InfluxDB
+    volumes:
+      - /run/udev:/run/udev:ro
+      - /opt/docker/scrutiny/config:/opt/scrutiny/config # 用户可自定义
+      - /opt/docker/scrutiny/influxdb:/opt/scrutiny/influxdb # 用户可自定义
+    devices: # !!! 需要用户手动编辑此部分 !!!
+      - "/dev/sda:/dev/sda" # 示例，必须修改为实际硬盘
+      # - "/dev/sdb:/dev/sdb"
+    # networks: # 通常不需要指定 bridge network
+    #  default:
+    #    external:
+    #      name: bridge

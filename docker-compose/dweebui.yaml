@@ -1,0 +1,13 @@
+services:
+  dweebui:
+    container_name: dweebui
+    image: lllllllillllllillll/dweebui
+    environment:
+      PORT: 8000
+      SECRET: "ReplaceWithYourSecretKey" # 必须修改
+    restart: unless-stopped
+    ports:
+      - 8000:8000 # 用户可自定义
+    volumes:
+      - /opt/docker/dweebui:/app/config # 用户可自定义
+      - /var/run/docker.sock:/var/run/docker.sock

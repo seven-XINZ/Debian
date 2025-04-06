@@ -1,0 +1,12 @@
+services:
+  portainer-ce:
+    ports:
+      - 8000:8000
+      - 9000:9000 # 用户可自定义
+      - 9443:9443 # 用户可自定义
+    container_name: portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/docker/portainer:/data # 用户可自定义
+    image: portainer/portainer-ce:latest
